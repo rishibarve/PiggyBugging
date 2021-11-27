@@ -3,7 +3,7 @@ package com.piggybugging.client;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.gwt.GwtApplication;
 import com.badlogic.gdx.backends.gwt.GwtApplicationConfiguration;
-import com.piggybugging.PiggyBugging;
+import com.piggybugging.PiggyBuggingGame;
 
 public class HtmlLauncher extends GwtApplication {
 
@@ -17,6 +17,6 @@ public class HtmlLauncher extends GwtApplication {
 
         @Override
         public ApplicationListener createApplicationListener () {
-                return new PiggyBugging();
+                return new PiggyBuggingGame();
         }
 }

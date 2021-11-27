@@ -4,6 +4,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import com.piggybugging.Configuration;
+
 public class Background {
 
     private Texture texture;
@@ -21,12 +23,11 @@ public class Background {
     }
 
     public void drawBackground(SpriteBatch batch){
-        batch.begin();
         batch.draw(texture, x1, 0, (int) width, (int) height);
         batch.draw(texture, x2, 0, (int) width, (int) height);
-        batch.end();
         if(x1 > width*-1){
-            x1--;x2--;
+            x1-=Configuration.getInstance().getBackgroundSpeed();
+            x2-=Configuration.getInstance().getBackgroundSpeed();
         }else{
             x1 = 0;
             x2 = (int) width;
